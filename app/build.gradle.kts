@@ -7,6 +7,11 @@ android {
     namespace = "com.example.avengerssh"
     compileSdk = 34
 
+    buildFeatures {
+        viewBinding = true
+    }
+
+
     defaultConfig {
         applicationId = "com.example.avengerssh"
         minSdk = 24
@@ -36,6 +41,14 @@ android {
 }
 
 dependencies {
+    //implementar el retrofit en dependencias.
+    val retrofitVersion = "2.11.0"
+    implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
+    implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
+    implementation("com.squareup.picasso:picasso:2.8")
+
+
 
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.appcompat:appcompat:1.7.0")
