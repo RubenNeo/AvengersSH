@@ -5,11 +5,17 @@ import com.example.avengerssh.data.SuperheroResponse
 import com.example.avengerssh.databinding.ItemSuperheroBinding
 import com.squareup.picasso.Picasso
 
-class SuperheroViewHolder(private val binding: ItemSuperheroBinding) : RecyclerView.ViewHolder(binding.root) {
+class SuperheroViewHolder(
+    private val binding: ItemSuperheroBinding) : RecyclerView.ViewHolder(binding.root) {
 
-    fun render(superhero: SuperheroResponse) {
+    fun render(superhero: SuperheroResponse, onItemSelected: (String) -> Unit) {
         binding.nameTextView.text = superhero.name
         Picasso.get().load(superhero.image.url).into(binding.avatarImageView);
+        binding.root.setOnClickListener{
+            onItemSelected(superhero.name)
+
+
+        }
 
     }
 }
