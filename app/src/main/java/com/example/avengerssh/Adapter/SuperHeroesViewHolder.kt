@@ -8,12 +8,11 @@ import com.squareup.picasso.Picasso
 class SuperheroViewHolder(
     private val binding: ItemSuperheroBinding) : RecyclerView.ViewHolder(binding.root) {
 
-    fun render(superhero: SuperheroResponse, onItemSelected: (String) -> Unit) {
+    fun render(superhero: SuperheroResponse, onItemSelected: (Int) -> Unit) {
         binding.nameTextView.text = superhero.name
         Picasso.get().load(superhero.image.url).into(binding.avatarImageView);
         binding.root.setOnClickListener{
-            onItemSelected(superhero.name)
-
+            onItemSelected(superhero.id)
 
         }
 

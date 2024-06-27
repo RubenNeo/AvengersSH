@@ -15,7 +15,7 @@
         android:theme="@style/Theme.AvengersSH"
         tools:targetApi="31">
         <activity
-            android:name=".activities.details_superheroactivity"
+            android:name=".activities.DetailsSuperHeroActivity"
             android:exported="false" />
         <activity
             android:name=".activities.MainActivity"

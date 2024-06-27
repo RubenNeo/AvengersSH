@@ -8,7 +8,8 @@ import com.example.avengerssh.databinding.ItemSuperheroBinding
 
 
 class SuperheroAdapter(
-    private var dataSet: List<SuperheroResponse> = emptyList(), val onItemSelected: (String) -> Unit
+    private var dataSet: List<SuperheroResponse> = emptyList(),
+    private val onItemSelected: (Int) -> Unit
 ) : RecyclerView.Adapter<SuperheroViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SuperheroViewHolder {
         val binding = ItemSuperheroBinding.inflate(LayoutInflater.from(parent.context))
@@ -18,7 +19,8 @@ class SuperheroAdapter(
     override fun getItemCount(): Int = dataSet.size
 
     override fun onBindViewHolder(holder: SuperheroViewHolder, position: Int) {
-        holder.render(dataSet[position], onItemSelected)
+        holder.render(dataSet[position], onItemSelected )
+
     }
 
     fun updateData(dataSet: List<SuperheroResponse>) {

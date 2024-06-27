@@ -1,14 +1,15 @@
 package com.example.avengerssh.activities
 
 import android.content.Intent
+import android.nfc.NfcAdapter.EXTRA_ID
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.avengerssh.Adapter.SuperheroAdapter
 import com.example.avengerssh.R
-import com.example.avengerssh.activities.details_superheroactivity.Companion.EXTRA_ID
 import com.example.avengerssh.databinding.ActivityMainBinding
 import com.example.avengerssh.retrofit.RetrofitProvider
 import kotlinx.coroutines.CoroutineScope
@@ -18,8 +19,8 @@ import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityMainBinding
-    lateinit var adapter: SuperheroAdapter
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var adapter: SuperheroAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,11 +28,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        adapter = SuperheroAdapter(){name -> navigateToDetails(-1)
-
+        adapter = SuperheroAdapter { id ->
+            navigateToDetails(id)
         }
         binding.recyclerView.adapter = adapter
-        binding.recyclerView.layoutManager = GridLayoutManager(this, 2)
+        binding.recyclerView.layoutManager = GridLayoutManager(this, 1)
 
     }
 
@@ -77,8 +78,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun navigateToDetails(id:Int){
-        val intent = Intent (this, details_superheroactivity::class.java)
-        intent.putExtra(EXTRA_ID, id)
+        val intent = Intent (this, DetailsSuperHeroActivity::class.java)
+        intent.putExtra("SUPERHERO_ID", id)
         startActivity(intent)
     }
 }

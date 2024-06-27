@@ -25,4 +25,3 @@ data class Image(
     @SerializedName("url") val url: String
 ) {
 }
-

@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.details_superheroactivity">
+    tools:context=".activities.DetailsSuperHeroActivity">
 
     <ImageView
         android:id="@+id/ivSuperhero"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="300dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,7 +18,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="300dp"
         android:elevation="8dp"
         app:cardCornerRadius="42dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -29,16 +29,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/white"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tvSuperHeroName"
+                android:id="@+id/tvSuperHeroname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:textColor="@color/black"
-                android:textSize="28sp"
-                android:textStyle="bold"/>
+                android:textSize="40dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvSuperheroRealName"
@@ -59,8 +60,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginHorizontal="16dp"
-                android:gravity="bottom"
                 android:layout_marginTop="24dp"
+                android:gravity="bottom"
                 android:orientation="horizontal">
 
                 <FrameLayout
@@ -68,43 +69,48 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_marginHorizontal="4dp"
-                    android:layout_weight="1">
-                </FrameLayout>
+                    android:layout_weight="1"
+                    android:background="@color/superhero_stat_Intelligence"></FrameLayout>
 
                 <View
                     android:id="@+id/viewStrength"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_marginHorizontal="4dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:background="@color/superhero_stat_Strength" />
 
                 <View
                     android:id="@+id/viewSpeed"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_marginHorizontal="4dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:background="@color/superhero_stat_Speed" />
 
                 <View
                     android:id="@+id/viewDurability"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_marginHorizontal="4dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:background="@color/superhero_stat_durability" />
 
                 <View
                     android:id="@+id/viewPower"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_marginHorizontal="4dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:background="@color/superhero_stat_power" />
 
                 <View
                     android:id="@+id/viewCombat"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_marginHorizontal="4dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:background="@color/superhero_stat_combat" />
 
 
             </LinearLayout>
@@ -113,71 +119,95 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:gravity="bottom"
                 android:layout_marginTop="4dp"
+                android:gravity="bottom"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="4dp"
-                    android:singleLine="true"
+                    android:layout_weight="1"
                     android:maxLines="1"
+                    android:singleLine="true"
+                    android:textAlignment="center"
                     android:text="Intelligence"
-                    android:textSize="10sp"
-                    android:layout_weight="1"/>
+                    android:textSize="10sp" />
 
                 <TextView
                     android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textAlignment="center"
                     android:text="Strength"
-                    android:layout_height="wrap_content"
-                    android:textSize="10sp"
-                    android:singleLine="true"
-                    android:maxLines="1"
-                    android:layout_marginHorizontal="4dp"
-                    android:layout_weight="1"/>
+                    android:textSize="10sp" />
 
                 <TextView
                     android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:textAlignment="center"
+                    android:singleLine="true"
                     android:text="Speed"
-                    android:textSize="10sp"
-                    android:singleLine="true"
-                    android:maxLines="1"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="4dp"
-                    android:layout_weight="1"/>
+                    android:textSize="10sp" />
 
                 <TextView
                     android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:textAlignment="center"
+                    android:singleLine="true"
                     android:text="Durability"
-                    android:singleLine="true"
-                    android:maxLines="1"
-                    android:layout_height="wrap_content"
-                    android:textSize="10sp"
-                    android:layout_marginHorizontal="4dp"
-                    android:layout_weight="1"/>
+                    android:textSize="10sp" />
 
                 <TextView
                     android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:textAlignment="center"
+                    android:singleLine="true"
                     android:text="Power"
-                    android:layout_height="wrap_content"
-                    android:textSize="10sp"
-                    android:singleLine="true"
-                    android:maxLines="1"
-                    android:layout_marginHorizontal="4dp"
-                    android:layout_weight="1"/>
+                    android:textSize="10sp" />
 
                 <TextView
                     android:layout_width="0dp"
-                    android:text="Combat"
                     android:layout_height="wrap_content"
-                    android:textSize="10sp"
-                    android:singleLine="true"
-                    android:maxLines="1"
                     android:layout_marginHorizontal="4dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:textAlignment="center"
+                    android:singleLine="true"
+                    android:text="Combat"
+                    android:textSize="10sp" />
+
 
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/Afiliation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:textStyle="italic|bold"/>
+
+            <ImageView
+                android:id="@+id/logoSuperheroes"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="center"/>
+
 
         </LinearLayout>
 
